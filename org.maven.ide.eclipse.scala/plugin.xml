@@ -14,4 +14,58 @@
    <extension point="org.maven.ide.eclipse.archetypeCatalogs">
       <remote description="Scala-tools.org Catalog" url="http://scala-tools.org/"/>
    </extension>
+   
+   <extension point="org.eclipse.debug.ui.launchShortcuts">
+      <shortcut id="org.maven.ide.eclipse.scala.runScalaCC"
+                class="org.maven.ide.eclipse.actions.ExecutePomAction:scala:cc"
+                icon="icons/scala.png"
+                label="Scala Continuous Compile"
+                modes="run"
+                path="2Scala">
+         <contextualLaunch>
+           <contextLabel label="Scala Continuous Compile" mode="run"/>
+           <enablement>
+             <with variable="selection">
+               <count value="1"/>
+               <iterate>
+                 <and>
+                   <test property="org.maven.ide.eclipse.scala.propertyTester.isScalaProject" forcePluginActivation="true" />
+                   <adapt type="org.eclipse.core.runtime.IAdaptable"/>
+                 </and>
+               </iterate>
+             </with>
+           </enablement>
+       </contextualLaunch>
+     </shortcut>
+      <shortcut id="org.maven.ide.eclipse.scala.runJetty"
+                class="org.maven.ide.eclipse.actions.ExecutePomAction:jetty:run"
+                icon="icons/scala.png"
+                label="Run Jetty Server"
+                modes="run"
+                path="1Scala">
+         <contextualLaunch>
+           <contextLabel label="Run Jetty Server" mode="run"/>
+           <enablement>
+             <with variable="selection">
+               <count value="1"/>
+               <iterate>
+                 <and>
+                   <test property="org.maven.ide.eclipse.scala.propertyTester.hasJettyPlugin" forcePluginActivation="true" />
+                   <adapt type="org.eclipse.core.runtime.IAdaptable"/>
+                 </and>
+               </iterate>
+             </with>
+           </enablement>
+       </contextualLaunch>
+     </shortcut>
+   </extension>
+     
+   <extension point="org.eclipse.core.expressions.propertyTesters">
+      <propertyTester
+            id="org.lds.stack.ide.StackPropertyTester"
+            class="org.maven.ide.eclipse.scala.ScalaPropertyTester"
+            namespace="org.maven.ide.eclipse.scala.propertyTester"
+            properties="isScalaProject,hasJettyPlugin"
+            type="org.eclipse.core.runtime.IAdaptable"/>
+   </extension>
 </plugin>

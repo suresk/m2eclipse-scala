@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<site>
+<site associateSitesURL="http://www.uresk.net/m2eclipse-scala/associate-sites.xml">
    <description name="Maven Integration for Scala IDE">
       Maven Integration for Scala IDE
    </description>
-   <feature url="features/org.maven.ide.eclipse.scala_feature_0.2.0.jar" id="org.maven.ide.eclipse.scala_feature" version="0.0.0"/>
+   <feature url="features/org.maven.ide.eclipse.scala_feature_0.2.0.qualifier.jar" id="org.maven.ide.eclipse.scala_feature" version="0.0.0">
+   	<category name="SCALA" />
+   </feature>
+   <category-def name="SCALA" label="m2eclipse Scala Integration" />
 </site>

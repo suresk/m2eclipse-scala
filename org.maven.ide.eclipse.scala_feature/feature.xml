@@ -2,7 +2,7 @@
 <feature
       id="org.maven.ide.eclipse.scala_feature"
       label="Maven Integration for Scala IDE"
-      version="0.2.0"
+      version="0.2.0.qualifier"
       provider-name="Sonatype, Inc.">
 
    <description url="github.com/sonatype/m2eclipse-scala/">
@@ -10,8 +10,14 @@
    </description>
 
    <url>
-      <update label="m2eclipse-scala" url="http://alchim31.net/m2e-scala/update-site"/>
+      <update label="m2eclipse-scala" url="http://www.uresk.net/m2eclipse-scala"/>
    </url>
+   
+   <requires>
+	  <import feature="org.scala-ide.sdt.feature" />
+	  <import feature="org.scala-ide.sdt.weaving.feature" />
+	  <import feature="org.maven.ide.eclipse.feature" />
+   </requires>
 
    <plugin
          id="org.maven.ide.eclipse.scala"

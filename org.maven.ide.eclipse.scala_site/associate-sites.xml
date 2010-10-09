@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<associateSites>
+	<associateSite label="M2Eclipse Update Site" url="https://repository.sonatype.org/content/repositories/forge-sites/m2e/0.12.0/N/0.12.0.201010081302/" />
+	<associateSite label="Scala IDE Update Site" url="http://download.scala-ide.org/nightly-update-helios-2.8.0.final" />
+</associateSites>
